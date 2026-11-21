@@ -16,6 +16,8 @@ Status: open. The formal Lean statement is `erdos_414` in
   joins the orbit of 1 inside the range, and counts the steps.
 - `results/`: raw output of each run.
 - `LOG.md`: research log with findings, leads and open questions.
+- `REFERENCES.md`: all prior work this builds on. Read this first: the problem
+  has substantial recent literature, and our results so far reproduce it.
 
 ## Run it
 

@@ -19,7 +19,7 @@ keeps its parity until it lands on a square, where it flips. After 1, the
 squares on the orbit of 1 come in pairs: an even square (flip to odd), then an
 odd square (flip back to even).
 
-**Lead: a mod 4 trap.** If n = 2m with m odd, then τ(n) = 2τ(m), which is a
+**Lead: a mod 4 trap** (later found to be known, see OEIS A165494 to A165499 in REFERENCES.md)**.** If n = 2m with m odd, then τ(n) = 2τ(m), which is a
 multiple of 4 unless m is a square. So an orbit that is 2 mod 4 stays 2 mod 4
 until it lands on twice an odd square. Even squares are 0 mod 4, so such an
 orbit cannot hit a square in the meantime. This may explain why the orbit of 1
