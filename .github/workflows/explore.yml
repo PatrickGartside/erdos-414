@@ -1,0 +1,19 @@
+name: explore
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Upper limit (needs about 7 bytes of memory per number)"
+        default: "1000000000"
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - run: gcc -O2 -o explore src/explore.c -lm
+      - run: ./explore "${{ inputs.limit }}" | tee run_output.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: run-${{ inputs.limit }}
+          path: run_output.txt
