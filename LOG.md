@@ -30,3 +30,10 @@ wrong. Not yet checked in Lean.
 - What is the full 2-adic structure (mod 8, mod 16, ...) of the orbits?
 - How fast does the record number of steps grow?
 - Literature: Spiro's original paper, OEIS A064491 references, prior AI attempts.
+
+**Run to 10^9** (`results/run_1e9.txt`, GitHub Actions run 44872426667).
+
+- Every n < 999,634,515 joins the orbit of 1 without leaving [1, 10^9].
+- Slowest to join so far: n = 926,045,731, after 477,654 steps.
+- The orbit of 1 has 43,942,603 terms up to 10^9, 17 of them perfect squares.
+  The two new ones are again an even/odd pair: 299982400 and 300086329.
