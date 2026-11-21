@@ -37,3 +37,31 @@ wrong. Not yet checked in Lean.
 - Slowest to join so far: n = 926,045,731, after 477,654 steps.
 - The orbit of 1 has 43,942,603 terms up to 10^9, 17 of them perfect squares.
   The two new ones are again an even/odd pair: 299982400 and 300086329.
+
+## 2026-11-20, literature check
+
+The problem has had serious recent work that the erdosproblems.com page did
+not show. Our findings so far reproduce known results.
+
+- **E. Li, "Square-Annular Dynamics and Coalescence Frontiers for n+τ(n)"**,
+  arXiv:2606.17926 (June 2026). Does not solve the problem. Proves the parity
+  law, that opposite-parity orbits can only meet after a square, a bound of
+  about log X on the number of separate components meeting [1, X], and
+  sufficient criteria for the conjecture in terms of "exit sets" E_k at each
+  square k^2 and transfer maps A_k between consecutive squares.
+- **"Kernel-Checked Frontier Certificates for Erdős Problem 414"**,
+  arXiv:2609.22298 (September 2026). Lean-certified: every pair below 10^8
+  coalesces. A 10^9 ledger exists but is not certified (Lean build about a day).
+  Measured for k <= 5000: |A_k(E_k)| = 1 only at k = 2, 3, 5, 315.
+- **erdosproblemaday.com** reports coalescence for all starts up to 10^10.
+- OEIS A165494 to A165499 (2009) already study orbits from 2(2n-1)^2 and
+  divisibility by 4, so the "mod 4 trap" above is not new either.
+
+**Where the wall is.** Two separate obstacles remain:
+1. Parity switching: orbits of opposite parity can only merge through squares,
+   and whether squares are hit often enough comes down to prime patterns near
+   k^2 (for example k^2 - 2 prime), which are out of reach of current methods.
+2. Same-parity merging: no method proves that two specific orbits of the same
+   parity must meet.
+
+**Consequence.** The plan's pivot rule (leads already known) is triggered.
